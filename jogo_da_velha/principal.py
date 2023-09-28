@@ -5,7 +5,7 @@ from funcoes import verificar_empate
 from funcoes import salvar_placar
 from funcoes import printar_placar
 
-placar = [0, 0]  # Inicialização do placar (X: placar[0], O: placar[1])
+placar = [0, 0]  
 
 while True:
     tabuleiro = ['_' for _ in range(9)]
