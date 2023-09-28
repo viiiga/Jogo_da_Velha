@@ -1,5 +1,4 @@
 def desenha_tabuleiro(tabuleiro):
-    """Desenha o tabuleiro do jogo da velha."""
     jogo_da_velha = ''
     for i in range(len(tabuleiro)):
         if i in [2, 5, 8]:
@@ -9,22 +8,18 @@ def desenha_tabuleiro(tabuleiro):
     return jogo_da_velha
 
 def verifica_posicao_livre(tabuleiro, posicao):
-    """Verifica se uma posição no tabuleiro está livre."""
     return tabuleiro[posicao] == '_'
 
 def verifica_vitoria(tabuleiro, simbolo):
-    """Verifica se o jogador com o símbolo fornecido ganhou."""
     for linha in [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]:
         if all(tabuleiro[i] == simbolo for i in linha):
             return True
     return False
 
 def verificar_empate(tabuleiro):
-    """Verifica se o jogo terminou em empate."""
     return '_' not in tabuleiro
 
 def salvar_placar(jogador_vencedor, placar):
-    """Salva o resultado da partida no arquivo de placar."""
     with open("placar.txt", "a") as arquivo:
         if jogador_vencedor == 1:
             arquivo.write("Jogador X venceu!\n")
